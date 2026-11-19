@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="Elimina tu cuenta de ArchForms y sus datos asociados, sin instalar la aplicación. También puedes solicitarlo por correo.">
+ <meta name="referrer" content="no-referrer">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://pcmkrfnjdfrnjkqnpqgf.supabase.co; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+ <meta name="color-scheme" content="light">
+ <title>Eliminar cuenta · ArchForms</title>
+ <link rel="stylesheet" href="styles.css">
+ <script type="module" src="app.js"></script>
+</head>
+<body>
+<header><div class="brand">ARCHFORMS</div><h1>Eliminar tu cuenta</h1><p>Gestiona la eliminación de tu cuenta y sus datos sin instalar la aplicación.</p><nav aria-label="Información de ArchForms"><a href="https://melisa2505.github.io/archforms-privacidad/">Privacidad</a><a href="https://melisa2505.github.io/archforms-condiciones/">Condiciones de servicio</a></nav></header>
+<main>
+ <section aria-labelledby="scope-title"><h2 id="scope-title">¿Qué se eliminará?</h2><p>Se eliminarán permanentemente tu cuenta de acceso, perfil profesional, firma, plantillas propias, expedientes, visitas, respuestas, contenido de informes, fotos, audios y registros de sincronización asociados. Las plantillas generales y las cuentas de otras personas se conservan.</p><div class="notice"><strong>Esta acción no se puede deshacer.</strong> Exporta los documentos que necesites antes de continuar. Los PDF ya exportados o compartidos, los datos de otros dispositivos sin conexión y las copias técnicas sujetas al ciclo de conservación del proveedor no se eliminan a distancia desde esta página. Consulta los detalles en la <a href="https://melisa2505.github.io/archforms-privacidad/#conservacion">política de conservación</a>.</div></section>
+ <section id="online-flow" hidden aria-labelledby="online-title">
+  <h2 id="online-title">Eliminar desde esta página</h2>
+  <p id="security-note">Inicia sesión con tu cuenta de ArchForms para verificar que eres su titular. Las credenciales se envían por HTTPS al mismo servicio de autenticación de la aplicación. Esta página no guarda tu contraseña ni tu sesión en el navegador.</p>
+  <form id="login-form" method="post">
+   <label for="email">Correo de tu cuenta<input id="email" name="email" type="email" autocomplete="username" required maxlength="254"></label>
+   <label for="password">Contraseña<input id="password" name="password" type="password" autocomplete="current-password" required></label>
+   <button id="login-button" type="submit">Verificar mi cuenta</button>
+  </form>
+  <div id="verified" hidden>
+   <p>Cuenta verificada: <strong id="account-email"></strong></p>
+   <p>Al confirmar se inicia el borrado real en ArchForms. Si se interrumpe, vuelve a verificar tu cuenta y reintenta para completarlo. Una eliminación iniciada no puede deshacerse.</p>
+   <form id="delete-form" method="post">
+    <label for="confirmation">Escribe ELIMINAR para confirmar<input id="confirmation" name="confirmation" autocomplete="off" spellcheck="false" required pattern="ELIMINAR"></label>
+    <div class="actions"><button id="cancel-button" type="button" class="secondary">Cancelar</button><button id="delete-button" type="submit" class="danger" disabled>Eliminar definitivamente</button></div>
+   </form>
+  </div>
+  <p id="progress" role="status" aria-live="polite"></p>
+  <p id="error" class="error" role="alert" hidden></p>
+  <div id="success" class="success" hidden><h3>Tu cuenta de ArchForms se ha eliminado</h3><p>El borrado de la cuenta y sus datos del servicio se completó. En tus dispositivos, elimina los datos locales de la app o del sitio y las copias exportadas que ya no quieras conservar. Esta página no puede limpiar los datos que la aplicación haya guardado en otro origen o dispositivo.</p></div>
+ </section>
+ <section id="email-request"><h2>Solicitar la eliminación por correo</h2><p>No necesitas iniciar sesión ni reinstalar la aplicación para solicitarla. Escribe a <a href="mailto:celis.ai.dev@gmail.com">celis.ai.dev@gmail.com</a> con el asunto <strong>«Eliminar cuenta de ArchForms»</strong>, indica el correo registrado y que quieres eliminar tu cuenta y los datos asociados. Preferentemente escribe desde esa misma dirección.</p><p>Verificaremos la titularidad antes de ejecutar una solicitud por correo y te comunicaremos el resultado o cualquier incidencia. No te pediremos contraseñas, códigos de acceso ni un pago. Si no puedes acceder al correo registrado, explícalo para acordar una comprobación proporcionada.</p><a class="button secondary" href="mailto:celis.ai.dev@gmail.com?subject=Eliminar%20cuenta%20de%20ArchForms&body=Solicito%20eliminar%20mi%20cuenta%20de%20ArchForms%20y%20los%20datos%20asociados.%0ACorreo%20registrado%3A%20">Solicitar por correo</a><noscript><p>El borrado automático requiere JavaScript. Puedes utilizar esta opción por correo sin activarlo.</p></noscript></section>
+ <section><h2>También desde la aplicación</h2><p>Abre <strong>Mi perfil → ⋮ → Eliminar cuenta</strong>, revisa la información y confirma el borrado. Si necesitas ayuda, contacta con <a href="mailto:celis.ai.dev@gmail.com">celis.ai.dev@gmail.com</a>.</p></section>
+</main>
+<footer>ArchForms · <a href="https://melisa2505.github.io/archforms-privacidad/">Política de privacidad</a> · <a href="https://melisa2505.github.io/archforms-condiciones/">Condiciones de servicio</a></footer>
+</body>
+</html>
